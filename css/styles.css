@@ -1,0 +1,305 @@
+/* Default Css */
+
+*,
+*::before,
+*::after {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+
+    width: 20px;
+}
+
+body{
+
+    background-color: #102C57; 
+}
+
+h1,h2,h3,h4,h5,h6 {
+
+    color: var(--secondary);
+    
+}
+
+
+
+/* Custom Variables */
+
+:root{
+
+    --primary: #322C2B;
+    --secondary: white;
+    --main-bg-color: rgb(151, 8, 8);
+    --alternative: #102C57; 
+    --mainBoxShadow: #F932A8;
+    --awesome: pink;
+    --borderColor: rgb(0, 130, 74);
+    --elementShadow: .2vw .3vw .2vw #FFEBB2;
+    --mainBg: gold;
+    --bgImg: linear-gradient( to right, var(--awesome), var(--mainBg));
+}
+
+
+/* Allows you to use animations */
+
+@property --top-left {
+
+    syntax:"<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --top-right {
+
+    syntax:"<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --bottom-left {
+
+    syntax:"<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --bottom-right {
+
+    syntax:"<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+/*Nav-bar & Footer*/
+
+:is( .navbar, footer ){
+
+    background-color: var(--alternative);
+    width: 100%;
+}
+
+/*Nav-Bar*/
+
+:is(.nav-link, footer) {
+    color: var(--secondary); 
+}
+
+img[alt='logo'] {
+
+    width: 5rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border: solid 3px var(--primary);
+}
+
+:is(a, .nav-link) {
+    transition: all .5s;
+    
+    &:hover {
+        transform: scale(1.2);
+        color: var(--mainBg);
+    }
+}
+
+/* Grid Layout */
+
+:is(body){
+    text-align: center;
+}
+
+/*Create three rows*/
+:is(body){
+    grid-template-rows: auto minmax(100%, 100dvh) auto; /*Dynamic viewport height*/
+}
+
+/*Home Section*/
+
+p{
+
+    color: var(--secondary) ;
+    font-family: "Italianno", cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin: 1rem 20rem;
+    padding-left: 10rem;
+    transition: all .5s;
+    
+    &:hover {
+        transform: scale(1.2);
+        font-weight: bolder;
+        color: #2C4E80;
+    }
+   }
+
+
+
+   .italianno {
+       font-family: "Italianno", cursive;
+       font-weight: 00;
+       font-style: normal;
+       display: flex;
+       font-size: 6rem;
+       margin: 10rem 15rem 2rem 25rem;
+       transition: all .5s;
+    
+       &:hover {
+           transform: scale(1.2);
+           font-weight:bolder;
+           color: #2C4E80;
+       }
+
+     }
+
+     .homeContainer {
+
+        background-image: url(https://joshua-langeveldt.github.io/images/images/scenary.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 1;
+    
+
+     }
+
+     img[alt='jam'] {
+
+     height: 15rem;
+     width: 15rem;
+        border-radius: 200px;
+        margin: 13rem 9rem;
+        border: 4px solid #FFEBB2;
+        margin-right: -10rem;
+        margin-left: 16rem;
+
+        transition: all .5s;
+    
+        &:hover {
+            transform: scale(1.2);
+            height: 20rem;
+            width:20rem;
+        }
+ 
+
+
+     }
+
+     .textAlign{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+
+  }
+
+  /*ANIMATION*/
+
+  .anime {
+    display: inline-block;
+    font-family: "arial";
+             font-size: 6rem;
+  
+  }
+  
+  .typed {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 10.5s steps(40, end) forwards, blink-caret .75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    0%, 100% { border-color: transparent }
+    50% { border-color: var(--mainBg); }
+  }
+
+
+     
+/* About Styling */ 
+
+.about-page {
+
+   margin: 5rem 2rem 0 0;
+   font-family: "Jockey One", sans-serif;
+   font-weight: 300;
+   padding: 4px;
+   height: 100px;
+   width: 600px;
+   font-size: 1.5rem;
+   transition: all .5s;
+    
+   &:hover {
+       transform: scale(1.2);
+       color: var(--mainBg);
+   }
+} 
+
+/* flipCard Styling*/
+
+img[alt='flipCard'] {
+
+    height: 300px;
+    width: 300px;
+margin: 10rem 4rem;
+border: 3px solid #FFEBB2;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    position: absolute;
+    left: 60%;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: absolute;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  } 
+  
